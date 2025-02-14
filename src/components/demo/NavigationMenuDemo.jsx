@@ -1,17 +1,7 @@
 import * as React from "react";
-
-// import Link from "next/link";
-import { Link } from "@radix-ui/react-navigation-menu";
-// import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils"; // If alias works
-
-//import { cn } from "../lib/utils"; // Adjust path manually
-// im
-
-// import { Icons } from "@/lib/icons";
-// import { Icons } from "@/lib/Icons";
-// import {Icons} from "../"
-// import { icons } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,7 +11,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Icons from "@/lib/icons";
 
 const components = [
   {
@@ -62,22 +51,23 @@ const components = [
 ];
 
 export function NavigationMenuDemo() {
+  const { t } = useTranslation();
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{t("getting_start")}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    to="/fetch"
                   >
                     {/* <Icons className="h-6 w-6" /> */}
                     {/* <Icon></Icon> */}
-                    <Icons />
+                    {/* <Icons /> */}
 
                     <div className="mb-2 mt-4 text-lg font-medium">
                       shadcn/ui

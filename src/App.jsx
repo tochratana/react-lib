@@ -1,16 +1,24 @@
-import { Button } from "./components/ui/button";
-import { NavigationMenu } from "./components/ui/navigation-menu";
-import { NavigationMenuDemo } from "./components/demo/NavigationMenuDemo";
-import { TabsDemo } from "./components/demo/TabsDemo";
+import { createBrowserRouter } from "react-router-dom";
+import "./index.css";
+import Navbar from "./components/layout/Navbar";
+import Fetch from "./pages/getting-start/Fetch";
+import Text from "./pages/getting-start/Text";
 
-function App() {
-  return (
-    <div className="p-5">
-      <Button>Hello Shadcn</Button>
-      <NavigationMenuDemo />
-      <TabsDemo />
-    </div>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navbar />,
+    children: [
+      {
+        path: "/fetch",
+        element: <Fetch />,
+      },
+      {
+        path: "/text",
+        element: <Text />,
+      },
+    ],
+  },
+]);
 
-export default App;
+export default router;
