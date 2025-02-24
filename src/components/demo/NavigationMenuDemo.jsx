@@ -15,7 +15,7 @@ import {
 const components = [
   {
     title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    href: "/dashboard",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
@@ -63,25 +63,23 @@ export function NavigationMenuDemo() {
                 <NavigationMenuLink asChild>
                   <Link
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    to="/fetch"
+                    to="/react-hook"
                   >
                     {/* <Icons className="h-6 w-6" /> */}
                     {/* <Icon></Icon> */}
                     {/* <Icons /> */}
 
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      React Hook
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                      Learn How to use ustate and usAffect
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem to="/products" title="Product Card">
+                How to rander product card
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.

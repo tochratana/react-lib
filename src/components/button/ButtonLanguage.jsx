@@ -29,10 +29,7 @@ const ButtonLanguage = () => {
   };
 
   return (
-    <button
-      onClick={toggleLanguage}
-      className="p-2 "
-    >
+    <button onClick={toggleLanguage} className="p-2 ">
       <img src={currentFlag} alt="Language Flag" className="w-8 h-8" />
     </button>
   );

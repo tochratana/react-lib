@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllProduct } from "@/auth/product";
-
+import { Link } from "react-router-dom";
 const CardProduct = () => {
   const [products, setProducts] = useState([]);
 
@@ -18,7 +18,7 @@ const CardProduct = () => {
   }, []);
 
   return (
-    <div>
+    <div className="gap-5 p-5 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {products.map((item) => (
         <div key={item.id} className="group relative block overflow-hidden">
           <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
@@ -40,8 +40,7 @@ const CardProduct = () => {
           </button>
 
           <img
-            src={item.image || "https://via.placeholder.com/300"}
-            alt={item.name || "Product Image"}
+            src={item.images || "https://via.placeholder.com/300"}
             className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
           />
 
@@ -68,12 +67,13 @@ const CardProduct = () => {
                 Add to Cart
               </button>
 
-              <button
+              <Link
+                to={`/products/${id}`}
                 type="button"
                 className="block w-full rounded-sm bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:scale-105"
               >
                 Buy Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
