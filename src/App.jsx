@@ -8,8 +8,7 @@ import ReactHook from "./pages/getting-start/ReactHook";
 import ProductCard from "./components/card/ProductCard";
 import Dashboard from "./pages/dashboard/Dashboard";
 import InputFill from "./pages/test/InputFill";
-import store from './app/store'
-import { Provider } from 'react-redux'
+
 
 const router = createBrowserRouter([
   {

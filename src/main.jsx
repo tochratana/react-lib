@@ -1,11 +1,11 @@
-import ReactDom from "react-dom/client";
 import React from "react";
+import ReactDOM from "react-dom/client"; // Correct import
 import { RouterProvider } from "react-router-dom";
-import router from "./App";
-import App from "./App";
-import { Provider } from "react-redux";
+import { Provider } from "react-redux"; // Remove duplicate import
+import store from "./app/store";
+import  router  from "./App"; // Make sure the router is properly exported
 
-ReactDom.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
