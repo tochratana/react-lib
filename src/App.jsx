@@ -8,7 +8,9 @@ import ReactHook from "./pages/getting-start/ReactHook";
 import ProductCard from "./components/card/ProductCard";
 import Dashboard from "./pages/dashboard/Dashboard";
 import InputFill from "./pages/test/InputFill";
-
+import ProductDetail from "./pages/getting-start/ProductDetail";
+import { FillInTheBlank } from "./pages/exercises/FillInTheBlank";
+import ImageTTS from "./pages/sound/ImageTTS";
 
 const router = createBrowserRouter([
   {
@@ -20,12 +22,20 @@ const router = createBrowserRouter([
         element: <ReactHook />,
       },
       {
+        path: "/product:id",
+        element: <ProductDetail />,
+      },
+      {
         path: "/products",
         element: <ProductCard />,
       },
       {
         path: "/signleproduct",
         element: <FetchSingleProduct />,
+      },
+      {
+        path: "/soundtts",
+        element: <ImageTTS />,
       },
     ],
   },
@@ -36,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/inputfill",
     element: <InputFill />,
+  },
+  {
+    path: "/fillintheblank",
+    element: <FillInTheBlank />,
   },
 ]);
 

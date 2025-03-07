@@ -10,13 +10,13 @@ const ReactHook = () => {
   console.log(data);
   return (
     <main className="max-w-screen-xl mx-auto">
-      <h1 className="text-blue-900 text-3xl font-bold">Products Page</h1>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {isLoading &&
           skeleton.map((index) => <ProductCardSkeleton key={index} />)}
         {!isLoading &&
           data?.products.map((product, index) => (
             <ProductCard
+              id={product.id}
               key={index}
               title={product.title}
               img={product.thumbnail}

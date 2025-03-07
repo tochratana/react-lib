@@ -19,7 +19,7 @@ export default function InputFill() {
       .catch((error) => {
         console.error("Error fetching data:", error);
         setLoading(false);
-      });ddddd
+      });
   }, []);
 
   const checkAnswer = () => {
